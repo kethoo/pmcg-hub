@@ -136,7 +136,7 @@ st.markdown("""
 st.markdown("""
     <div class="title-container">
         <img src="https://raw.githubusercontent.com/kethoo/pmcg-hub/main/pmcg-logo.png" alt="PMCG Logo">
-        <h1>PMCG AI Tools Hub</h1>
+        <h1> AI Tools Hub</h1>
     </div>
     <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
 """, unsafe_allow_html=True)
@@ -145,8 +145,8 @@ st.markdown("""
 st.markdown("""
 <div class="card-container">
     <div class="card">
-        <h2>🧪 Testing Tool</h2>
-        <p>Run and evaluate new model prompts and configurations.</p>
+        <h2>✏️ Highlighter Tool</h2>
+        <p>Run and highlight multiple keywords all at once.</p>
         <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
     </div>
     <div class="card">
