@@ -37,7 +37,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
         <div class="tool-card">
-            <h2>🧪 Testing Tool</h2>
+            <h2>✏️ Highlighter Tool</h2>
             <p>Run experimental model or data tests</p>
             <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
         </div>
