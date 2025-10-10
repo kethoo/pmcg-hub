@@ -108,12 +108,17 @@ st.markdown("""
 
         /* Footer */
         .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             text-align: center;
             color: #E0E0E0;
             font-size: 0.9rem;
-            margin-top: auto;
-            padding: 1.5rem 0 1rem 0;
+            padding: 1rem 0;
+            background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
         }
+
 
         /* Responsive logo/title scaling */
         @media (max-width: 600px) {
