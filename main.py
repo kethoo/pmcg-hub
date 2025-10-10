@@ -3,14 +3,13 @@ import streamlit as st
 # ----------------- PAGE CONFIG -----------------
 st.set_page_config(
     page_title="PMCG Tools Hub",
-    page_icon="💼",
+    page_icon="pmcg-logo.png",  # Optional favicon if supported
     layout="wide"
 )
 
 # ----------------- CUSTOM STYLING -----------------
 st.markdown("""
     <style>
-        /* Background and text */
         [data-testid="stAppViewContainer"] {
             background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
             color: white;
@@ -24,6 +23,26 @@ st.markdown("""
         }
         h1, h2, h3, p {
             color: white !important;
+        }
+
+        /* Title section */
+        .title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        .title-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .title-container h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
         }
 
         /* Card grid layout */
@@ -78,21 +97,25 @@ st.markdown("""
             color: #E0E0E0;
             font-size: 0.9rem;
             margin-top: auto;
-            padding: 1rem 0;
+            padding: 1.5rem 0 1rem 0;
         }
     </style>
 """, unsafe_allow_html=True)
 
-
-# ----------------- PAGE TITLE -----------------
-st.markdown("<h1 style='text-align:center;margin-top:2rem;'>💼 PMCG AI Tools Hub</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>", unsafe_allow_html=True)
+# ----------------- TITLE SECTION -----------------
+st.markdown("""
+    <div class="title-container">
+        <img src="https://raw.githubusercontent.com/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>/main/pmcg-logo.png" alt="PMCG Logo">
+        <h1>PMCG AI Tools Hub</h1>
+    </div>
+    <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
+""", unsafe_allow_html=True)
 
 # ----------------- TOOL CARDS -----------------
 st.markdown("""
 <div class="card-container">
     <div class="card">
-        <h2>✏️ HIghlighter Tool</h2>
+        <h2>🧪 Testing Tool</h2>
         <p>Run and evaluate new model prompts and configurations.</p>
         <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
     </div>
@@ -108,7 +131,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
 
 # ----------------- FOOTER -----------------
 st.markdown("""
