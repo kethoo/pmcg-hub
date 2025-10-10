@@ -3,13 +3,14 @@ import streamlit as st
 # ----------------- PAGE CONFIG -----------------
 st.set_page_config(
     page_title="PMCG Tools Hub",
-    page_icon="pmcg-logo.png",  # Optional favicon if supported
+    page_icon="pmcg-logo.png",
     layout="wide"
 )
 
 # ----------------- CUSTOM STYLING -----------------
 st.markdown("""
     <style>
+        /* Background & overall layout */
         [data-testid="stAppViewContainer"] {
             background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
             color: white;
@@ -18,34 +19,42 @@ st.markdown("""
             flex-direction: column;
             justify-content: space-between;
         }
+
         [data-testid="stHeader"], [data-testid="stToolbar"] {
             background: rgba(0,0,0,0);
         }
+
         h1, h2, h3, p {
             color: white !important;
         }
 
-        /* Title section */
+        /* Title and logo alignment */
         .title-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 18px;
             margin-top: 2rem;
-        }
-        .title-container img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .title-container h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.8s ease-in-out;
         }
 
-        /* Card grid layout */
+        .title-container img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            padding: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card layout */
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -53,6 +62,7 @@ st.markdown("""
             gap: 2rem;
             padding: 2rem 0;
         }
+
         .card {
             flex: 1 1 280px;
             max-width: 350px;
@@ -63,19 +73,23 @@ st.markdown("""
             transition: all 0.3s ease;
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
+
         .card:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-6px);
         }
+
         .card h2 {
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
+
         .card p {
             color: #EAEAEA;
             font-size: 0.95rem;
             margin-bottom: 15px;
         }
+
         .card a {
             display: inline-block;
             color: white;
@@ -86,12 +100,13 @@ st.markdown("""
             padding: 6px 12px;
             transition: all 0.3s ease;
         }
+
         .card a:hover {
             background: white;
             color: #4B2E83;
         }
 
-        /* Footer placement */
+        /* Footer */
         .footer {
             text-align: center;
             color: #E0E0E0;
@@ -99,13 +114,28 @@ st.markdown("""
             margin-top: auto;
             padding: 1.5rem 0 1rem 0;
         }
+
+        /* Responsive logo/title scaling */
+        @media (max-width: 600px) {
+            .title-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .title-container img {
+                width: 60px;
+                height: 60px;
+            }
+            .card {
+                max-width: 90%;
+            }
+        }
     </style>
 """, unsafe_allow_html=True)
 
 # ----------------- TITLE SECTION -----------------
 st.markdown("""
     <div class="title-container">
-        <img src="https://github.com/kethoo/pmcg-hub/blob/main/pmcg-logo.png">
+        <img src="https://raw.githubusercontent.com/kethoo/pmcg-hub/main/pmcg-logo.png" alt="PMCG Logo">
         <h1>PMCG AI Tools Hub</h1>
     </div>
     <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
