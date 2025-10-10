@@ -1,65 +1,100 @@
 import streamlit as st
 
-st.set_page_config(page_title="PMCG Tools Hub", layout="wide")
+# ----------------- PAGE CONFIG -----------------
+st.set_page_config(
+    page_title="PMCG Tools Hub",
+    page_icon="💼",
+    layout="wide"
+)
 
+# ----------------- CUSTOM STYLING -----------------
 st.markdown("""
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
+            background-color: #4B2E83;
+            color: white;
         }
-        .tool-card {
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
+        [data-testid="stAppViewContainer"] {
+            background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
+            color: white;
+        }
+        [data-testid="stHeader"] {
+            background: rgba(0,0,0,0);
+        }
+        [data-testid="stToolbar"] {
+            right: 2rem;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: white !important;
+        }
+        .card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 30px 20px;
             text-align: center;
             transition: all 0.3s ease;
+            height: 220px;
         }
-        .tool-card:hover {
-            background-color: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
+        .card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-8px);
         }
-        a {
+        .card a {
+            color: white;
             text-decoration: none;
-            color: #fff;
-            font-weight: 600;
+            font-weight: bold;
             font-size: 1.1rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #E0E0E0;
+            font-size: 0.9rem;
         }
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align:center;'>🧭 PMCG Tools Hub</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Choose which AI tool to launch below</p>", unsafe_allow_html=True)
+
+# ----------------- PAGE TITLE -----------------
+st.markdown("<h1>💼 PMCG AI Tools Hub</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>", unsafe_allow_html=True)
 st.write("")
 
+# ----------------- TOOL CARDS -----------------
 col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown("""
-        <div class="tool-card">
-            <h2>✏️ Highlighter Tool</h2>
-            <p>Run experimental model or data tests</p>
+        <div class="card">
+            <h2>🧪 Testing Tool</h2>
+            <p>Run and evaluate new model prompts and configurations.</p>
             <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
         </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
-        <div class="tool-card">
+        <div class="card">
             <h2>🔍 Job Search Generator</h2>
-            <p>Generate optimized job search strings</p>
+            <p>Create optimized search strings for LinkedIn & DevelopmentAid.</p>
             <a href="https://search-generator.streamlit.app/" target="_blank">Launch →</a>
         </div>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
-        <div class="tool-card">
+        <div class="card">
             <h2>📄 CV Assessment Tool</h2>
-            <p>Analyze and evaluate resumes automatically</p>
+            <p>Analyze and assess resumes using AI-driven insights.</p>
             <a href="https://assess-cvs-c7copw3tnxvtusnmujw8kg.streamlit.app/" target="_blank">Launch →</a>
         </div>
     """, unsafe_allow_html=True)
 
-st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Developed by PMCG • Powered by OpenAI & Streamlit 🚀</p>", unsafe_allow_html=True)
+
+# ----------------- FOOTER -----------------
+st.markdown("""
+    <div class="footer">
+        <p>© 2025 PMCG • Delivering Progress</p>
+    </div>
+""", unsafe_allow_html=True)
