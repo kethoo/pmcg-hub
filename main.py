@@ -105,7 +105,7 @@ st.markdown("""
 # ----------------- TITLE SECTION -----------------
 st.markdown("""
     <div class="title-container">
-        <img src="https://raw.githubusercontent.com/<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>/main/pmcg-logo.png" alt="PMCG Logo">
+        <img src="https://github.com/kethoo/pmcg-hub/blob/main/pmcg-logo.png">
         <h1>PMCG AI Tools Hub</h1>
     </div>
     <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
