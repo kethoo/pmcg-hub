@@ -1,9 +1,4 @@
-import os
 import streamlit as st
-
-# ----------------- SYSTEM SAFETY FIX -----------------
-# Prevent "inotify watch limit reached" errors
-os.environ["STREAMLIT_WATCHDOG"] = "false"
 
 # ----------------- PAGE CONFIG -----------------
 st.set_page_config(
@@ -15,7 +10,7 @@ st.set_page_config(
 # ----------------- CUSTOM STYLING -----------------
 st.markdown("""
     <style>
-        /* Background & overall layout */
+        /* Background & layout */
         [data-testid="stAppViewContainer"] {
             background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
             color: white;
@@ -24,16 +19,13 @@ st.markdown("""
             flex-direction: column;
             justify-content: space-between;
         }
-
         [data-testid="stHeader"], [data-testid="stToolbar"] {
             background: rgba(0,0,0,0);
         }
-
         h1, h2, h3, p {
             color: white !important;
         }
-
-        /* Title and logo alignment */
+        /* Title + logo */
         .title-container {
             display: flex;
             align-items: center;
@@ -43,7 +35,6 @@ st.markdown("""
             margin-bottom: 1rem;
             animation: fadeIn 0.8s ease-in-out;
         }
-
         .title-container img {
             width: 70px;
             height: 70px;
@@ -53,13 +44,11 @@ st.markdown("""
             padding: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Card layout */
+        /* Cards */
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -67,7 +56,6 @@ st.markdown("""
             gap: 2rem;
             padding: 2rem 0;
         }
-
         .card {
             flex: 1 1 280px;
             max-width: 350px;
@@ -78,23 +66,19 @@ st.markdown("""
             transition: all 0.3s ease;
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-
         .card:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-6px);
         }
-
         .card h2 {
             font-size: 1.4rem;
             margin-bottom: 10px;
         }
-
         .card p {
             color: #EAEAEA;
             font-size: 0.95rem;
             margin-bottom: 15px;
         }
-
         .card a {
             display: inline-block;
             color: white;
@@ -105,12 +89,10 @@ st.markdown("""
             padding: 6px 12px;
             transition: all 0.3s ease;
         }
-
         .card a:hover {
             background: white;
             color: #4B2E83;
         }
-
         /* Footer */
         .footer {
             position: fixed;
@@ -123,8 +105,7 @@ st.markdown("""
             padding: 1rem 0;
             background: linear-gradient(135deg, #4B2E83 0%, #5E3EA1 100%);
         }
-
-        /* Responsive logo/title scaling */
+        /* Responsive */
         @media (max-width: 600px) {
             .title-container {
                 flex-direction: column;
@@ -145,7 +126,7 @@ st.markdown("""
 st.markdown("""
     <div class="title-container">
         <img src="https://raw.githubusercontent.com/kethoo/pmcg-hub/main/pmcg-logo.png" alt="PMCG Logo">
-        <h1> AI Tools Hub</h1>
+        <h1>AI Tools Hub</h1>
     </div>
     <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
 """, unsafe_allow_html=True)
@@ -156,19 +137,17 @@ st.markdown("""
     <div class="card">
         <h2>✏️ Highlighter Tool</h2>
         <p>Run and highlight multiple keywords all at once.</p>
-        <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
+        <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app" target="_blank">Launch →</a>
     </div>
-
     <div class="card">
         <h2>🔍 Job Search Generator</h2>
         <p>Create optimized search strings for LinkedIn & DevelopmentAid.</p>
-        <a href="https://search-generator.streamlit.app/" target="_blank">Launch →</a>
+        <a href="https://search-generator.streamlit.app" target="_blank">Launch →</a>
     </div>
-
     <div class="card">
         <h2>📄 CV Assessment Tool</h2>
         <p>Analyze and assess resumes using AI-driven insights.</p>
-        <a href="https://assess-cv-pmcg.streamlit.app" target="_blank">Launch →</a>
+        <a href="https://assess-cvs.streamlit.app" target="_blank">Launch →</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
