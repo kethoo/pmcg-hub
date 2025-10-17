@@ -1,4 +1,9 @@
+import os
 import streamlit as st
+
+# ----------------- SYSTEM SAFETY FIX -----------------
+# Prevent "inotify watch limit reached" errors
+os.environ["STREAMLIT_WATCHDOG"] = "false"
 
 # ----------------- PAGE CONFIG -----------------
 st.set_page_config(
@@ -6,11 +11,6 @@ st.set_page_config(
     page_icon="pmcg-logo.png",
     layout="wide"
 )
-
-# ----------------- TOOL LINKS -----------------
-CV_ASSESS_URL = "https://assess-cv-pmcg.streamlit.app/"
-HIGHLIGHTER_URL = "https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/"
-SEARCH_GEN_URL = "https://search-generator.streamlit.app/"
 
 # ----------------- CUSTOM STYLING -----------------
 st.markdown("""
@@ -142,36 +142,34 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ----------------- TITLE SECTION -----------------
-st.markdown(f"""
+st.markdown("""
     <div class="title-container">
         <img src="https://raw.githubusercontent.com/kethoo/pmcg-hub/main/pmcg-logo.png" alt="PMCG Logo">
-        <h1>AI Tools Hub</h1>
+        <h1> AI Tools Hub</h1>
     </div>
     <p style='text-align:center;font-size:1.1rem;'>Select a tool to begin — powered by OpenAI and Streamlit</p>
 """, unsafe_allow_html=True)
 
 # ----------------- TOOL CARDS -----------------
-st.markdown(f"""
+st.markdown("""
 <div class="card-container">
-
     <div class="card">
         <h2>✏️ Highlighter Tool</h2>
         <p>Run and highlight multiple keywords all at once.</p>
-        <a href="{HIGHLIGHTER_URL}" target="_blank">Launch →</a>
+        <a href="https://testing-sxbopsnuxoqdfjkgwfkpey.streamlit.app/" target="_blank">Launch →</a>
     </div>
 
     <div class="card">
         <h2>🔍 Job Search Generator</h2>
         <p>Create optimized search strings for LinkedIn & DevelopmentAid.</p>
-        <a href="{SEARCH_GEN_URL}" target="_blank">Launch →</a>
+        <a href="https://search-generator.streamlit.app/" target="_blank">Launch →</a>
     </div>
 
     <div class="card">
         <h2>📄 CV Assessment Tool</h2>
         <p>Analyze and assess resumes using AI-driven insights.</p>
-        <a href="{CV_ASSESS_URL}" target="_blank">Launch →</a>
+        <a href="https://assess-cv-pmcg.streamlit.app" target="_blank">Launch →</a>
     </div>
-
 </div>
 """, unsafe_allow_html=True)
 
