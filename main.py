@@ -162,7 +162,7 @@ st.markdown("""
     <div class="card">
         <h2>📄 CV Assessment Tool</h2>
         <p>Analyze and assess resumes using AI-driven insights.</p>
-        <a href="https://assess-cvs-c7copw3tnxvtusnmujw8kg.streamlit.app/" target="_blank">Launch →</a>
+        <a href="https://assess-cv-pmcg.streamlit.app//" target="_blank">Launch →</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
